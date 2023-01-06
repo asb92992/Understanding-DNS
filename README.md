@@ -19,3 +19,18 @@
 
 - I login in to remote desktop using the Public IP address of DC-1 and Client-1 and login in to both as jessica_admin and       with the password use for her. 
 
+
+![A-Records part 2](https://user-images.githubusercontent.com/58159183/210931278-45ac3181-1fb3-474d-8a14-cfcae9399f6f.gif)
+
+
+Client-1 "Tries to Ping "mainframe"
+1) Check cache (no result)
+2) Check host file (no result)
+3) Check DNS (no result)
+-Note: Client-1 tried to ping mainframe. What happens is client-1 first check the local dns cache and if it doesn't find anything in the cache it will then check it's local host file. Every window computer has a local host file. Once it can't find anything in the host file. It then moves on to check the DNS server that is assign to the network interface and when nothing there it will essentially fail. Hence the error message of mainframe. 
+
+
+
+
+- Creating a A-record for mainframe
+- Assigning mainframe IP address to DC-1 IP address
