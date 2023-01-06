@@ -62,3 +62,10 @@ Client-1 "Tries to Ping "mainframe"
 
 # CNAME Record Exercise
 
+![A-Records part 6](https://user-images.githubusercontent.com/58159183/210937859-b9b2893d-2b85-4efd-92d1-7458a0d1b499.gif)
+
+
+- Go back to DC-1 and create a CNAME record that points the host “search” to “www.google.com”
+- Go back to Client-1 and attempt to ping “search”, observe the results of the CNAME record
+- On Client-1, nslookup “search”, observe the results of the CNAME record
+
