@@ -43,4 +43,22 @@ Client-1 "Tries to Ping "mainframe"
 
 # Local DNS Cache Exercise
 
+![A-Records part 4](https://user-images.githubusercontent.com/58159183/210933627-47e29999-3a7c-48f9-b092-0d2bcc968d23.gif)
+
+- dc-1.mydomain.com so next time we ping the DNS server its going to use the local cache
+- mainframe.mydomain.com is map to 10.0.0.4
+
+
+![A-Records part 5](https://user-images.githubusercontent.com/58159183/210935438-b8a04f7b-2373-49cc-a96a-d3cc0db52581.gif)
+
+
+- Go back to DC-1 and change mainframe’s record address from 10.0.0.4 to 8.8.8.8
+- Go back to Client-1 and ping “mainframe” again. Observe that it still pings the old address
+- Its pinging the old IP address because 10.0.0.4 still exist in the local DNS cache on Client-1 computer
+- Note: A troubleshooting step is to open CMD as a adminstrator and type ipconfig /flushdns to wipe out the cache 
+- Flush the DNS cache (ipconfig /flushdns). Observe that the cache is empty
+- Attempt to ping “mainframe” again. Observe the address of the new record is showing up
+- Now mainframe pings 8.8.8.8
+
+# CNAME Record Exercise
 
